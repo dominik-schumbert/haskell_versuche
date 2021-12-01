@@ -1,4 +1,6 @@
+module Main (main) where
 import Control.Monad.Writer.Lazy (Any)
+
 main :: IO()
 
 -- Define a new string
@@ -19,8 +21,8 @@ fac 0 = 1
 fac n = n * fac (n - 1)
 
 -- if condition
-doubleSmallNumber :: Int -> Int
-doubleSmallNumber x = if x > 100 then x else x*2
+doubleSmallNumber :: Int -> Int -> Int
+doubleSmallNumber x threshold = if x > threshold then x else x*2
 
 -- Define a list
 numbers :: [Int]
@@ -47,7 +49,7 @@ main = do
     putStr "Ergebnis von Fac 5: "
     print(fac 5)
     putStr "Ergebnis von doubleSmallNumber 10: "
-    print(doubleSmallNumber 10)
+    print(doubleSmallNumber 10 100)
     putStr "Content of the list: "
     print numbers
     putStr "stringNumbers: "
